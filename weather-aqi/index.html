@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prakritik - Weather & AQI Alerts</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="overlay">
+
+    <div class="runningText">⚠ Please agree to the rules before starting</div>
+
+    <div class="rulesBtn" onclick="openRules()">📜 Rules</div>
+
+    <h1 style="margin-top:50px;">🌿 Prakritik Weather & AQI Alerts</h1>
+    <p>"Stay connected with nature"</p>
+
+    <button id="startBtn" onclick="goToRegister()" disabled>Start</button>
+
+    <!-- RULES POPUP -->
+    <div id="rulesPopup" class="popup">
+        <h2>📌 How to Activate Weather Alerts</h2>
+        <p>1️⃣ Click the button below and send: <b>"join between-nearby"</b></p>
+        <a class="whatsappBtn" target="_blank"
+           href="https://api.whatsapp.com/send/?phone=%2B14155238886&text=join+between-nearby&type=phone_number&app_absent=0">
+           📩 Whatsapp Us
+        </a>
+        <p>2️⃣ You will receive: <b>"Sandbox is Active"</b></p>
+        <p>3️⃣ After activation, tick <b>Agree</b> and press Start</p>
+
+        <label style="display:flex;align-items:center;margin-top:10px;">
+            <input type="checkbox" id="agreeCheck" onclick="enableStart()"> 
+            <span style="margin-left:10px; color:white; font-weight:bold;">I agree to the rules ✔</span>
+        </label>
+
+        <div class="closePopup" onclick="closeRules()">Close</div>
+    </div>
+
+    <!-- REGISTRATION FORM -->
+    <div id="registrationPage" style="display:none;">
+        <h2>📝 Register for Alerts</h2>
+        <input id="name" placeholder="Enter Full Name">
+        <input id="age" placeholder="Enter Age" type="number">
+        <input id="mobile" placeholder="WhatsApp Number Without +91">
+        <input id="city" placeholder="Enter City">
+
+        <button id="submitBtn" onclick="registerUser()">Submit & Activate Alert</button>
+
+        <p id="status"></p>
+        <div id="weatherCard" style="margin-top:20px;"></div>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
